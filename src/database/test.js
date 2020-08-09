@@ -12,8 +12,8 @@ Database.then(async (db) => {
     }
     
     classValue = {
-        subject: "Química", 
-        cost: "20,00"
+        subject: 1, 
+        cost: "20"
         // o proffy id virá pelo banco de dados
     }
     
@@ -47,8 +47,16 @@ Database.then(async (db) => {
         JOIN classes ON (classes.proffy_id = proffys.id)
         WHERE classes.proffy_id = 1;
     `)
-    console.log(selectedClassesAndProffys)
 
-    // 
-
+    // O horário que a pessoa trabalha por exemplo, é das 8h - 18h
+    // o horário do time_from (8h) precisa der antes ou igual ao 
+    // horário solicitado o time_to precisa ser acima
+    const selectClassesSchedules = await db.all(`
+        SELECT class_schedule.*
+        FROM class_schedule
+        WHERE class_schedule.class_id = "1"
+        AND class_schedule.weekday = "0"
+        AND class_schedule.time_from <= "520"
+        AND class_schedule.time_to > "520"
+    `)
 })

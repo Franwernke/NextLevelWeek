@@ -104,12 +104,14 @@
 }
 
 .schedule-item .delete {
+    margin-top: 3rem; 
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .schedule-item .delete button {
+    width: 100%;
     background-color: red;
     opacity: 0.8;
     color: white;
@@ -174,5 +176,15 @@
         margin-top: 0;
 
         width: 200px;
+    }
+
+    .schedule-item .delete {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    
+    .schedule-item .delete button {
+        width: unset;
     }
 }
