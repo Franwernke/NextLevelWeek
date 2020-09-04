@@ -22,7 +22,7 @@
     margin-top: 0.8rem;
 }
 
-.hero-image {
+.hero-image img {
     width: 100%;
 }
 
@@ -100,13 +100,30 @@
     height: 2.2rem;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 700px) {
     :root {
-        font-size: 40%;
+        font-size: 60%;
+    }
+}
+
+@media (max-width: 1100px) and (min-width: 700px) {
+    :root {
+        font-size: 60%;
+    }
+    #container .hero-image img {
+        width: 80%;
+    }
+    #container .hero-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
 @media (min-width: 1100px) {
+    :root {
+        font-size: 60%;
+    }
     #landing-page #container {
         max-width: 1100px;
         display: grid;
@@ -136,5 +153,9 @@
     }
     .total-connections {
         grid-area: texting;
+    }
+
+    .hero-image img {
+        width: 100%;
     }
 }
